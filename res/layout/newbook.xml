@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/newbook_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:text="@string/newbook_title_default">
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/newbook_author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:text="@string/newbook_author_default"/>
+
+    <EditText
+        android:id="@+id/newbook_isbn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:text="@string/newbook_isbn_default"/>
+
+    <Button
+        android:id="@+id/newbook_button_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/newbook_submit_button" />
+
+</LinearLayout>
