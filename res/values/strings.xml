@@ -4,15 +4,15 @@
     <string name="hello">Hello World, Books!</string>
     <string name="app_name">Android-Oblig2</string>
     
-    
-    
-    
-    
-    
     <!-->newBook.xml strings<!-->
     <string name="newbook_title_default">Title</string>
     <string name="newbook_author_default">Author</string>
     <string name="newbook_isbn_default">ISBN</string>
     <string name="newbook_submit_button">Submit</string>
 
+    <!-- >searcher.xml strings<!-->
+    <string name="searcher_searchdefault">Search</string>
+    <string name="searcher_spinner_content1">Title</string>
+    <string name="searcher_spinner_content2">Author</string>
+    <string name="searcher_spinner_content3">ISBN</string>
 </resources>

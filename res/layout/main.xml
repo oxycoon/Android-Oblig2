@@ -22,15 +22,15 @@
         android:text="Search" />
 
     <Button
-        android:id="@+id/menu_button_newBook"
+        android:id="@+id/menu_button_newbook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register new book" />
 
-    <ImageButton
-        android:id="@+id/imageButton1"
+    <Button
+        android:id="@+id/menu_button_deletebook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@android:drawable/btn_star" />
+        android:text="Delete books" />
 
 </LinearLayout>
