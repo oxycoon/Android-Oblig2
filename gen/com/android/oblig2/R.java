@@ -26,6 +26,7 @@ public final class R {
         public static final int searcher_search=0x7f050008;
         public static final int searcher_searchby=0x7f050009;
         public static final int searcher_spinner=0x7f05000a;
+        public static final int viewer_textbox_list=0x7f05000c;
     }
     public static final class layout {
         public static final int deleter=0x7f030000;

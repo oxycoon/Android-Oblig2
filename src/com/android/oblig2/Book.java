@@ -1,4 +1,4 @@
-package com.android.oblig2.a;
+package com.android.oblig2;
 
 public class Book {
 	private String title, author, isbn;
@@ -23,5 +23,10 @@ public class Book {
 	public String ISBN()
 	{
 		return isbn;
+	}
+	
+	public String toString()
+	{
+		return "Title: " + title + " by " + author + ". " + isbn;
 	}
 }

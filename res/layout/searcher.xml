@@ -4,12 +4,13 @@
     android:layout_height="fill_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical" >
-
+
     <EditText
         android:id="@+id/searcher_search"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" 
-        android:text="@string/searcher_searchdefault">
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:text="@string/searcher_searchdefault" >
         
         <requestFocus />
     </EditText>
