@@ -28,6 +28,9 @@
         <activity 
             android:name="NewBook">
         </activity>
+        <activity 
+            android:name="Deleter">
+        </activity>
 
         
     </application>

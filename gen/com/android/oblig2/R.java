@@ -14,19 +14,24 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int button1=0x7f05000b;
-        public static final int menu_button_deletebook=0x7f050003;
-        public static final int menu_button_newbook=0x7f050002;
-        public static final int menu_button_search=0x7f050001;
-        public static final int menu_button_view=0x7f050000;
-        public static final int newbook_author=0x7f050005;
-        public static final int newbook_button_submit=0x7f050007;
-        public static final int newbook_isbn=0x7f050006;
-        public static final int newbook_title=0x7f050004;
-        public static final int searcher_search=0x7f050008;
-        public static final int searcher_searchby=0x7f050009;
-        public static final int searcher_spinner=0x7f05000a;
-        public static final int viewer_textbox_list=0x7f05000c;
+        public static final int button1=0x7f050010;
+        public static final int deleter_button=0x7f050004;
+        public static final int deleter_checkbox=0x7f050003;
+        public static final int deleter_layout_innerlinear=0x7f050001;
+        public static final int deleter_layout_outerlinear=0x7f050000;
+        public static final int deleter_textbox_list=0x7f050002;
+        public static final int menu_button_deletebook=0x7f050008;
+        public static final int menu_button_newbook=0x7f050007;
+        public static final int menu_button_search=0x7f050006;
+        public static final int menu_button_view=0x7f050005;
+        public static final int newbook_author=0x7f05000a;
+        public static final int newbook_button_submit=0x7f05000c;
+        public static final int newbook_isbn=0x7f05000b;
+        public static final int newbook_title=0x7f050009;
+        public static final int searcher_search=0x7f05000d;
+        public static final int searcher_searchby=0x7f05000e;
+        public static final int searcher_spinner=0x7f05000f;
+        public static final int viewer_textbox_list=0x7f050011;
     }
     public static final class layout {
         public static final int deleter=0x7f030000;

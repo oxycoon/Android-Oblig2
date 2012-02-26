@@ -5,4 +5,39 @@
     android:gravity="center_horizontal"
     android:orientation="vertical" >
 
+    <LinearLayout
+        android:id="@+id/deleter_layout_outerlinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.90"
+        android:orientation="vertical" >
+        
+        <LinearLayout
+        	android:id="@+id/deleter_layout_innerlinear"
+        	android:layout_width="match_parent"
+        	android:layout_height="wrap_content"
+        	android:orientation="horizontal" >
+        
+            	<TextView
+    				android:id="@+id/deleter_textbox_list"
+        			android:layout_width="280dp"
+        			android:layout_height="wrap_content" 
+       				android:text="Book by Author. ISBN"
+        			android:textSize="20dp"/>
+
+            	<CheckBox
+                	android:id="@+id/deleter_checkbox"
+            	    android:layout_width="wrap_content"
+        	        android:layout_height="wrap_content"/>
+
+    	</LinearLayout>
+
+    </LinearLayout>
+    
+    <Button
+            android:id="@+id/deleter_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete selected" />
+
 </LinearLayout>

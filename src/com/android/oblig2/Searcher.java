@@ -1,6 +1,8 @@
 package com.android.oblig2;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.*;
 import android.widget.*;
@@ -38,6 +40,23 @@ public class Searcher extends Activity {
 		theButton.setOnClickListener(new ButtonHandler());
 		
 		editor = (EditText) findViewById(R.id.searcher_search);
+		
+		
+		notYetImplemented();
+		
+    }
+    
+    public void notYetImplemented()
+    {
+    	final AlertDialog alertDialog = new AlertDialog.Builder(Searcher.this).create();
+		alertDialog.setTitle("Not yet implemented");
+		alertDialog.setMessage("This feature has not yet been implemented into this software.");
+		alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+		   public void onClick(DialogInterface dialog, int which) {
+		      alertDialog.dismiss();
+		   }
+		});
+		alertDialog.show();
     }
     
     public Book[] search(String s)

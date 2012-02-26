@@ -1,23 +1,20 @@
 package com.android.oblig2;
 
-import com.android.oblig2.R;
-
 import android.app.ListActivity;
 import android.os.Bundle;
-import android.widget.*;
+import android.widget.ArrayAdapter;
 
-
-public class Viewer extends ListActivity{
+public class Deleter extends ListActivity{
 	private ArrayAdapter<String> adapter;
 	private BookList theList;
 	
-	//TODO:Retur av valgt bok, liste søk om vi får tid.
+	//TODO:
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);      
         theList = BookList.getInstance();
         
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, theList.toStringArray());
 		setListAdapter(adapter);
+      
 	}
-
 }

@@ -46,7 +46,6 @@ public class BookList {
 	{
 		String[] temp = new String[theList.size()];
 		
-		
 		for (int i = 0; i < temp.length; i++)
 		{
 			temp[i] = theList.get(i).toString();
@@ -75,6 +74,9 @@ public class BookList {
 		return theList.isEmpty();
 	}
 	
+	/**
+	 * Unused features. Implemented to use in later versions.
+	 * */
 	public Book[] search_onAuthor(String a)
 	{
 		ArrayList<Book> temp = new ArrayList<Book>();

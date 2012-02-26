@@ -46,7 +46,7 @@ public class Books extends Activity{
 //    	saveData();
 //    }
     
-    //TODO
+    //TODO: Save data to file
     public boolean saveData()
     {
     	FileOutputStream fos;
@@ -77,7 +77,7 @@ public class Books extends Activity{
     	}
     }
     
-    //TODO
+    //TODO:Load data from file
     public void loadData()
     {
     	
@@ -94,6 +94,10 @@ public class Books extends Activity{
     private void startNewBook()
     {
     	startActivity(new Intent(Books.this, NewBook.class));
+    }
+    private void startDeleter()
+    {
+    	startActivity(new Intent(Books.this, Deleter.class));
     }
     
     private class ButtonHandler implements View.OnClickListener
@@ -114,7 +118,7 @@ public class Books extends Activity{
     		}
     		else if(v.getId() == R.id.menu_button_deletebook)
     		{
-    			
+    			startDeleter();
     		}
     	}	
     }
