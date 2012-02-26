@@ -44,27 +44,31 @@ public class BookList {
 	
 	public String[] toStringArray()
 	{
-		ArrayList<String> temp = new ArrayList<String>();
-				
-		for (Book b: theList)
+		String[] temp = new String[theList.size()];
+		
+		
+		for (int i = 0; i < temp.length; i++)
 		{
-			temp.add(b.toString());
+			temp[i] = theList.get(i).toString();
 		}
 		
-		return (String[]) temp.toArray();
+		return temp;
 	}
 	
-//	public String[] toStringArray(Book[] al)
-//	{
-//		ArrayList<String> temp = new ArrayList<String>();
-//		
-//		for (Book b: al)
-//		{
-//			temp.add(b.toString());
-//		}
-//		
-//		return (String[]) temp.toArray();
-//	}
+	public String[] toStringArray(Book[] al)
+	{
+		{
+			String[] temp = new String[al.length];
+			
+			
+			for (int i = 0; i < temp.length; i++)
+			{
+				temp[i] = al[i].toString();
+			}
+			
+			return temp;
+		}
+	}
 	
 	public boolean isEmpty()
 	{
