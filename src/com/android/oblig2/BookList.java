@@ -12,7 +12,7 @@ public class BookList {
 		if(instance == null)
 		{
 			instance = new BookList();
-	        
+	        instance.theList.add(new Book("Test", "Test", "1337-1337-1337-1337"));
 		}
 		return instance;
 	}
@@ -20,30 +20,32 @@ public class BookList {
 	private BookList()
 	{
 		theList = new ArrayList<Book>();
-		theList.add(new Book("Placeholder", "Placeholder", "9999-9999-9999-9999"));
 	}
 	
 	public boolean newBook(String t, String a, String i)
 	{
-		theList.add(new Book (t, a, i));
+		int temp = theList.size();
+		boolean unique = true;
 		
-		return true;
+		for (Book b: theList)
+		{
+			if(b.ISBN().equals(i))
+				unique = false;
+		}
+		
+		if (unique)
+			theList.add(new Book (t, a, i));
+		
+		if (temp + 1 == theList.size())
+			return true;
+		else
+			return false;
 	}
-	
-/*	public void sortList(int id)
-	{
-		if (id == 0)
-		{}
-		else if (id == 1)
-		{}
-		else if (id == 2);
-		{}
-	}*/
 	
 	public String[] toStringArray()
 	{
 		ArrayList<String> temp = new ArrayList<String>();
-		
+				
 		for (Book b: theList)
 		{
 			temp.add(b.toString());
@@ -51,6 +53,18 @@ public class BookList {
 		
 		return (String[]) temp.toArray();
 	}
+	
+//	public String[] toStringArray(Book[] al)
+//	{
+//		ArrayList<String> temp = new ArrayList<String>();
+//		
+//		for (Book b: al)
+//		{
+//			temp.add(b.toString());
+//		}
+//		
+//		return (String[]) temp.toArray();
+//	}
 	
 	public boolean isEmpty()
 	{

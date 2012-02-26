@@ -1,7 +1,6 @@
 package com.android.oblig2;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.*;
 import android.widget.*;
@@ -10,21 +9,19 @@ import com.android.oblig2.R;
 
 
 public class Searcher extends Activity {
-	private BookList theList;
 	private Spinner theSpinner;
 	private ArrayAdapter<String> targets;
 	private Button theButton;
 	private EditText editor;
+	private BookList theList;
 	
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.searcher);
+        setContentView(R.layout.searcher);        
         
         theList = BookList.getInstance();
-        
-        
         //Spinner
         theSpinner = (Spinner) findViewById(R.id.searcher_spinner);
 		targets = new ArrayAdapter<String>(this,
@@ -43,19 +40,19 @@ public class Searcher extends Activity {
 		editor = (EditText) findViewById(R.id.searcher_search);
     }
     
-    public void search(String s)
+    public Book[] search(String s)
     {
     	if (theSpinner.getSelectedItemPosition() == 0)
     	{
-    		theList.search_onTitle(s);
+    		return theList.search_onTitle(s);
     	}
     	else if (theSpinner.getSelectedItemPosition() == 1)
     	{
-    		theList.search_onAuthor(s);
+    		return theList.search_onAuthor(s);
     	}
-    	else if (theSpinner.getSelectedItemPosition() == 2)
+    	else 
     	{
-    		theList.search_onISBN(s);
+    		return theList.search_onISBN(s);
     	}
     }
     
@@ -63,7 +60,11 @@ public class Searcher extends Activity {
     {
     	public void onClick(View v)
     	{
-    		search(editor.getText().toString());
+    		try
+    		{
+    			search(editor.getText().toString());
+    		}
+    		catch(NullPointerException e) {;}
     	}	
     }
     

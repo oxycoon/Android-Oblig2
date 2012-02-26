@@ -23,7 +23,7 @@ public class Books extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        theList.getInstance();
+        BookList.getInstance();
         
         
         menu_search = (Button)findViewById(R.id.menu_button_search);
@@ -46,6 +46,7 @@ public class Books extends Activity{
 //    	saveData();
 //    }
     
+    //TODO
     public boolean saveData()
     {
     	FileOutputStream fos;
@@ -76,6 +77,7 @@ public class Books extends Activity{
     	}
     }
     
+    //TODO
     public void loadData()
     {
     	
