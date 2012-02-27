@@ -9,6 +9,7 @@ public class Book {
 		title = t;
 		author = a;
 		isbn = i;
+		selected = false;
 	}
 	
 	public String Title()

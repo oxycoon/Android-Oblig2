@@ -2,6 +2,7 @@ package com.android.oblig2;
 
 
 import java.io.*;
+import java.util.ArrayList;
 
 import com.android.oblig2.R;
 
@@ -23,7 +24,7 @@ public class Books extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        BookList.getInstance();
+        theList = BookList.getInstance();
         
         
         menu_search = (Button)findViewById(R.id.menu_button_search);
@@ -37,7 +38,7 @@ public class Books extends Activity{
         menu_view.setOnClickListener(new ButtonHandler());
         menu_delete.setOnClickListener(new ButtonHandler());
        
-        
+        loadData();
     }
     
 //    protected void onStop()
@@ -77,10 +78,57 @@ public class Books extends Activity{
     	}
     }
     
-    //TODO:Load data from file
     public void loadData()
     {
+    	ArrayList<String> stringstemp = new ArrayList<String>();
+    	String[] var = new String[3];
+    	boolean unique = true;
     	
+    	try
+    	{
+    		FileInputStream fis = this.getApplicationContext().openFileInput("books.txt");
+    		InputStreamReader isr = new InputStreamReader(fis);
+    		BufferedReader reader = new BufferedReader(isr);
+    		
+    		String line = reader.readLine();
+    		stringstemp.clear();
+    		while (line != null) 
+    		{
+    			stringstemp.add(line);
+    			line = reader.readLine();
+    		}
+    		
+    		isr.close();
+    		reader.close();
+    		fis.close();
+    	} 
+    	catch (FileNotFoundException e) 
+    	{
+    		e.printStackTrace();
+    	} 
+    	catch (IOException e) 
+    	{
+    		e.printStackTrace();
+    	}
+    	
+    	
+    	for(String s: stringstemp)
+    	{
+    		unique = true;
+    		var = s.split(",");
+    		
+    		for (Book b: theList.theList)
+    		{
+    			if(var[2].toString().equals(b.ISBN()))
+    			{
+    				unique = false;
+    			}
+    		}
+    		if (unique)
+    		{
+    			theList.theList.add(new Book(var[0], var[1], var[2]));
+    		}
+    	}
     }
     
     private void startViewer()

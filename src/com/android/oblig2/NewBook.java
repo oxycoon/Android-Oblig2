@@ -1,5 +1,10 @@
 package com.android.oblig2;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+
 import com.android.oblig2.R;
 
 import android.view.View;
@@ -41,10 +46,21 @@ public class NewBook extends Activity{
     			if (theList.newBook(title.getText().toString(), 
 						author.getText().toString(), isbn.getText().toString()))
     			{
-    				//TODO:Lagre boken til filen og Broadcast
+    				FileOutputStream fos;
+    	    		
+    	    		fos = NewBook.this.getApplicationContext().openFileOutput("books.txt", MODE_APPEND);
+    	    		OutputStreamWriter osw = new OutputStreamWriter(fos);
+    	    		
+    	    		osw.write(title.getText().toString() + "," + author.getText().toString() + 
+    	    					"," + isbn.getText().toString() + "\n");
+    	    		osw.close();
+    	    		fos.close();
+
+    				//TODO: Broadcast
     				title.setText("");
     				author.setText("");
-    				isbn.setText("");
+    				isbn.setText("");	
+    				
     			}
     			else
     			{    				
@@ -59,7 +75,12 @@ public class NewBook extends Activity{
     				alertDialog.show();
     			}
     		}
-    		catch(Exception e){;}
+        	catch (FileNotFoundException e)
+        	{;}
+        	catch (IOException e)
+        	{;}
+    		catch(Exception e)
+    		{;}
     	}	
     }
     
