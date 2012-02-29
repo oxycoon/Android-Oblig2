@@ -10,7 +10,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         <activity
-            android:name="Books"
+            android:name=".Books"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,15 +24,29 @@
         </activity>
         <activity 
             android:name="Viewer">
+            
+            <intent-filter>
+                <action android:name="com.android.oblig2.VIEWER" />
+                <data android:host="oblig2" />
+                <data android:path="/temp/books/viewer" />
+                <data android:scheme="book" />
+                
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
         <activity 
             android:name="NewBook">
+           	<intent-filter>
+                <action android:name="com.android.oblig2.NEWBOOK" />
+                <data android:host="oblig2" />
+                <data android:path="/temp/books/newbook" />
+                <data android:scheme="book" />
+                
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
         <activity 
             android:name="Deleter">
-        </activity>
-
-        
+        </activity>        
     </application>
-
 </manifest>

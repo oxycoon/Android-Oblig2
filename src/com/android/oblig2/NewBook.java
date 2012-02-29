@@ -13,12 +13,16 @@ import android.widget.*;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 
 public class NewBook extends Activity{
 	private Button submit;
 	private EditText title, author, isbn;
 	private BookList theList;
+	
+	public static final String NEW_BOOK_ADDED = "com.android.oblig2.NEW_BOOK";
+	public static final String NEWBOOK = "com.android.oblig2.NEWBOOK";
 	
 	
     public void onCreate(Bundle savedInstanceState) {
@@ -55,6 +59,11 @@ public class NewBook extends Activity{
     	    					"," + isbn.getText().toString() + "\n");
     	    		osw.close();
     	    		fos.close();
+    	    		
+    	    		Intent intent = new Intent(NEW_BOOK_ADDED);
+    	    		intent.putExtra("bookTitle", title.getText().toString());
+    	    		
+    	    		sendBroadcast(intent);
 
     				//TODO: Broadcast
     				title.setText("");

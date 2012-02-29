@@ -15,8 +15,8 @@ import android.view.*;
 public class Books extends Activity{
 	private Button menu_search, menu_new, menu_view, menu_delete;
 	private BookList theList;
-
-
+	
+	public static final int BOOKS_SUBACTIVITY = 2;
 	
     /** Called when the activity is first created. */
     @Override
@@ -133,7 +133,7 @@ public class Books extends Activity{
     
     private void startViewer()
     {
-    	startActivity(new Intent(Books.this, Viewer.class));
+    	startActivityForResult(new Intent(Books.this, Viewer.class), BOOKS_SUBACTIVITY);
     }
     private void startSearcher()
     {
@@ -146,6 +146,27 @@ public class Books extends Activity{
     private void startDeleter()
     {
     	startActivity(new Intent(Books.this, Deleter.class));
+    }
+    
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+    	super.onActivityResult(requestCode, resultCode, data);
+    	
+    	switch(requestCode)
+    	{
+    		case(BOOKS_SUBACTIVITY):
+    		{
+    			if (resultCode == Activity.RESULT_OK)
+    			{
+    				if(data!=null)
+    				{
+    					Toast t = Toast.makeText(this, data.getStringExtra("returnResult") + ", hentet fra Viewer.", 10);
+    					t.show();
+    				}
+    			}
+    		}
+    	}	
     }
     
     private class ButtonHandler implements View.OnClickListener
@@ -169,6 +190,5 @@ public class Books extends Activity{
     			startDeleter();
     		}
     	}	
-    }
-    
+    }    
 }
