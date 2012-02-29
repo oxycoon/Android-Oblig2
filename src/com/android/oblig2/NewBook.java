@@ -40,7 +40,7 @@ public class NewBook extends Activity{
 
     }
     
-    private class ButtonHandler implements View.OnClickListener
+    protected class ButtonHandler implements View.OnClickListener
     {
     	public void onClick(View v)
     	{
